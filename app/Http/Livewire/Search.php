@@ -11,9 +11,11 @@ class Search extends Component
 
     public function render()
     {
+        $repos = $this->search ? Repo::search($this->search)->get() : collect();
+
         return view(
             'livewire.search',
-            ['repos' => Repo::search($this->search)->get()]
+            ['repos' => $repos]
         );
     }
 }
