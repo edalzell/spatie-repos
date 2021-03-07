@@ -14,8 +14,9 @@ class Repo extends Model
      * @var array
      */
     protected $fillable = [
+        'description',
         'github_id',
         'name',
-        'description',
+        'url',
     ];
 }

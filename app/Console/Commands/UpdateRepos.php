@@ -7,7 +7,7 @@ use Github\Client;
 use Github\ResultPager;
 use Illuminate\Console\Command;
 
-class ReposUpdate extends Command
+class UpdateRepos extends Command
 {
     /**
      * The name and signature of the console command.
@@ -21,17 +21,7 @@ class ReposUpdate extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
-
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
+    protected $description = 'Update all repos';
 
     /**
      * Execute the console command.
@@ -56,6 +46,7 @@ class ReposUpdate extends Command
             [
                 'description' => $repo['description'],
                 'name' => $repo['name'],
+                'url' => $repo['html_url'],
             ]);
         });
 

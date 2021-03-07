@@ -18,6 +18,7 @@ class CreateReposTable extends Migration
             $table->unsignedBigInteger('github_id')->unique();
             $table->string('name')->unique();
             $table->string('description', 5000)->nullable();
+            $table->string('url');
             $table->timestamps();
         });
     }
